@@ -1,0 +1,28 @@
+{
+  "name": "gitbook-plugin-leanpub-affiliate",
+  "description": "Adds social share buttons to your gitbook",
+  "main": "index.js",
+  "version": "0.0.1",
+  "engines": {
+    "gitbook": ">=0.4.7"
+  },
+  "homepage": "https://github.com/bguiz/gitbook-plugin-leanpub-affiliate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bguiz/gitbook-plugin-leanpub-affiliate.git"
+  },
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/bguiz/gitbook-plugin-leanpub-affiliate/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bguiz",
+  "keywords": [
+    "gitbook",
+    "plugin",
+    "leanpub",
+    "affiliate"
+  ]
+}
