@@ -29,7 +29,13 @@ You can configure the plugin is `book.json`:
 {
     "pluginsConfig": {
         "leanpubAffiliate": {
-            "queryString": "?a=27hVMyWVn46xaZCi6E563X&subID=gitbookPlugin"
+            "queryString": "?a=27hVMyWVn46xaZCi6E563X&subID=gitbookPlugin",
+            "image": {
+                "display": true,
+                "width": 102,
+                "height": 150
+            },
+            "count": 3
         }
     }
 }
@@ -37,6 +43,10 @@ You can configure the plugin is `book.json`:
 
 * `queryString`
     * Gets suffixed to every affiliate link
+* `count`
+    * Number of affiliate links to show per page
+* `image`
+    * Whether or not images should be displayed, and their dimensions
 
 ## Licence
 
