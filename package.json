@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-leanpub-affiliate",
-  "description": "Adds social share buttons to your gitbook",
+  "description": "Adds Leanpub affiliate links to your gitbook",
   "main": "index.js",
   "version": "0.0.1",
   "engines": {
