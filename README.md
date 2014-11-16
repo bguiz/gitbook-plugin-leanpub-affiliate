@@ -29,7 +29,10 @@ You can configure the plugin is `book.json`:
 {
     "pluginsConfig": {
         "leanpubAffiliate": {
-            "queryString": "?a=27hVMyWVn46xaZCi6E563X&subID=gitbookPlugin",
+            "queryString": {
+                "a": "27hVMyWVn46xaZCi6E563X",
+                "subID": "gitbookPlugin"
+            },
             "image": {
                 "display": true,
                 "width": 102,
@@ -47,6 +50,20 @@ You can configure the plugin is `book.json`:
     * Number of affiliate links to show per page
 * `image`
     * Whether or not images should be displayed, and their dimensions
+
+## Styling
+
+The appearance of the list of Leanpub books at the bottom of each page is rudimentary.
+Please add CSS styles to the theme you are using to achieve the intended styling effect.
+
+## Notes
+
+If you experience problems with the plugin not having any effect at all,
+i.e. the links do not appear at the bottom of each page,
+please check your `book.json` file.
+If gitbook fails to parse that file, it will silently fail,
+rendering all the pages without any plugins or themes.
+This affects all gitbook plugins, not just this one.
 
 ## Licence
 
