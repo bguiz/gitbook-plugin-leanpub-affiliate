@@ -26,23 +26,32 @@ module.exports.hooks = {
     "page:after": function(page) {
         var config = this.options.pluginsConfig.leanpubAffiliate || {};
         config.queryString = config.queryString || '?a=27hVMyWVn46xaZCi6E563X&subID=gitbookPlugin';
+        if (typeof config.queryString !== 'string') {
+            config.queryString = '?' + Object.keys(config.queryString).map(function(key) {
+                return key+'='+config.queryString[key];
+            }).join('&');
+        }
         config.image = config.image || {
             display: true,
             width: 68,
             height: 100,
         };
         config.count = config.count || 3;
+        var widthPercent = Math.floor(90 / config.count);
+        var widthPixels = Math.floor(config.image.width);
         out = '\n\n<br /><hr />';
         for (var c = 0; c < config.count; ++c) {
             var ad = pickAd();
-            out += '<a href="'+ad.url+config.queryString+'" class="gitbook-leanpub-affiliate">';
+            out += '<a href="'+ad.url+config.queryString+'" class="gitbook-leanpub-affiliate" '+
+                'style="display: inline-block; max-width: '+widthPercent+'%; min-width: '+widthPixels+'px; vertical-align: top;">';
             if (config.image.display) {
-                out += '<img width="'+config.image.width+'" height="'+config.image.height+'" src="'+ad.image+'" class="gitbook-leanpub-affiliate-cover" />';
+                out += '<img width="'+config.image.width+'" height="'+config.image.height+
+                    '" src="'+ad.image+'" class="gitbook-leanpub-affiliate-cover" /><br />';
             }
             out +=
                 '<span class="gitbook-leanpub-affiliate-text">'+
-                    '<div>'+ad.title+'</div>'+
-                    '<div>by '+ad.author_string+'</div>'+
+                    '<span>'+ad.title+'</span><br />'+
+                    '<span>by '+ad.author_string+'</span>'+
                 '</span></a>\n';
         }
 
