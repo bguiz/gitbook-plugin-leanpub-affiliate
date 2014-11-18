@@ -41,7 +41,16 @@ You can configure the plugin is `book.json`:
                 "height": 150
             },
             "count": 3,
-            "total": 50
+            "total": 50,
+            "links": [
+                {
+                    "id":21391,
+                    "title":"AngularJs vs EmberJs",
+                    "author_string":"Brendan Graetz",
+                    "url":"http://leanpub.com/angularjs-emberjs-compare",
+                    "image":"https://s3.amazonaws.com/titlepages.leanpub.com/angularjs-emberjs-compare/medium?1416295405"
+                }
+            ]
         }
     }
 }
@@ -57,6 +66,9 @@ You can configure the plugin is `book.json`:
 * `total`
     * Not all links will be picked for display, by default, just twice of the count per page
     * Specify the total number of links to randomly select for display across all pages in the gitbook
+* `links`
+    * An array of links that should always be included
+    * Use these for your favourite books
 
 ## Styling
 

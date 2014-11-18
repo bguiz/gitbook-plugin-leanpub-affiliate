@@ -70,8 +70,12 @@ module.exports.hooks = {
         };
         config.count = config.count || 3;
         config.total = Math.max(config.total || config.count, config.count * 2);
-        config.ads = pickAds(config.total);
-        console.log('Leanpub affiliate links count:', config.ads.length);
+        config.links = config.links || [];
+        config.ads = pickAds(config.total - config.links.length);
+        config.links.forEach(function(ad) {
+            config.ads.push(ad);
+        });
+        console.log('Leanpub affiliate links count:', config.ads.length, 'of which manually specified', config.links.length);
         this.options.pluginsConfig.leanpubAffiliate = config;
     },
 
