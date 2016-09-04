@@ -10,7 +10,7 @@ to the bottom of every page in your gitbook.
 Install as a global NodeJs package.
 
 ```
-$ npm install -g gitbook-plugin-leanpub-affilate
+$ npm install -g gitbook-plugin-leanpub-affiliate
 ```
 
 ## Use in a gitbook
